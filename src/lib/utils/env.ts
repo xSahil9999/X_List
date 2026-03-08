@@ -1,0 +1,15 @@
+const requiredServerKeys = [
+  "TMDB_API_KEY",
+  "NEXT_PUBLIC_FIREBASE_API_KEY",
+  "NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN",
+  "NEXT_PUBLIC_FIREBASE_PROJECT_ID",
+  "NEXT_PUBLIC_FIREBASE_APP_ID"
+] as const;
+
+export function assertServerEnv() {
+  for (const key of requiredServerKeys) {
+    if (!process.env[key]) {
+      console.warn(`[env] Missing variable ${key}`);
+    }
+  }
+}
