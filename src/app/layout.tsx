@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import "@/app/globals.css";
 import { Providers } from "@/components/layout/providers";
 import { AppShell } from "@/components/layout/app-shell";
@@ -11,6 +12,13 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="de">
+      <head>
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1616427775987604"
+          crossOrigin="anonymous"
+        />
+      </head>
       <body>
         <Providers>
           <AppShell>{children}</AppShell>
