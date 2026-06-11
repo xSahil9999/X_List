@@ -25,7 +25,7 @@ export default function AboutPage() {
       <section className="space-y-4">
         <h2 className="text-2xl font-bold">Unsere Mission</h2>
         <p className="text-base leading-relaxed text-textMuted">
-          X_List wurde mit dem Ziel gegründet, Media-Enthusiasten eine zentrale Plattform zu bieten, um ihre Lieblingsinhalte zu organisieren, zu verfolgen und zu bewerten. Egal ob Anime, Manga, Filme, TV-Serien oder Bücher – bei X_List findest du alles an einem Ort.
+          X_List wurde mit dem Ziel gegründet, Media-Enthusiasten eine zentrale Plattform zu bieten, um ihre Lieblingsinhalte zu organisieren, zu verfolgen und zu bewerten.
         </p>
       </section>
 
@@ -34,60 +34,13 @@ export default function AboutPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="p-6 rounded-lg border border-borderSoft bg-panel">
             <h3 className="font-semibold text-lg mb-2">🎬 Multi-Media Support</h3>
-            <p className="text-sm text-textMuted">
-              Verfolge Anime, Manga, Filme, Serien und Bücher – alles in einer App.
-            </p>
+            <p className="text-sm text-textMuted">Verfolge Anime, Manga, Filme, Serien und Bücher.</p>
           </div>
           <div className="p-6 rounded-lg border border-borderSoft bg-panel">
             <h3 className="font-semibold text-lg mb-2">📊 Fortschritts-Tracking</h3>
-            <p className="text-sm text-textMuted">
-              Behalte den Überblick über deine aktuellen Serien, Episoden und Lese-Fortschritte.
-            </p>
-          </div>
-          <div className="p-6 rounded-lg border border-borderSoft bg-panel">
-            <h3 className="font-semibold text-lg mb-2">⭐ Bewertungen & Favoriten</h3>
-            <p className="text-sm text-textMuted">
-              Bewerte deine Lieblingsinhalte und markiere sie als Favoriten.
-            </p>
-          </div>
-          <div className="p-6 rounded-lg border border-borderSoft bg-panel">
-            <h3 className="font-semibold text-lg mb-2">🔍 Umfangreiche Datenbank</h3>
-            <p className="text-sm text-textMuted">
-              Zugriff auf Millionen von Titeln aus vertrauenswürdigen Quellen.
-            </p>
+            <p className="text-sm text-textMuted">Behalte den Überblick über deine Serien und Fortschritt.</p>
           </div>
         </div>
-      </section>
-
-      <section className="space-y-4">
-        <h2 className="text-2xl font-bold">Unsere Datenquellen</h2>
-        <p className="text-base text-textMuted mb-4">
-          X_List aggregiert Daten aus den zuverlässigsten Quellen der Branche.
-        </p>
-        <ul className="space-y-3">
-          <li className="flex gap-3">
-            <span className="text-accent">•</span>
-            <span><strong>TMDb</strong> – Filme und TV-Serien</span>
-          </li>
-          <li className="flex gap-3">
-            <span className="text-accent">•</span>
-            <span><strong>MyAnimeList</strong> – Anime und Manga</span>
-          </li>
-          <li className="flex gap-3">
-            <span className="text-accent">•</span>
-            <span><strong>Google Books</strong> – Bücher und Literatur</span>
-          </li>
-        </ul>
-      </section>
-
-      <section className="rounded-lg border border-accent/30 bg-accent/5 p-8 text-center space-y-4">
-        <h2 className="text-2xl font-bold">Bereit zu starten?</h2>
-        <p className="text-textMuted mb-6">
-          Erstelle dein Konto und beginne, deine Medien-Sammlung zu verfolgen.
-        </p>
-        <Link href="/login">
-          <Button size="lg">Jetzt anmelden</Button>
-        </Link>
       </section>
     </div>
   );
