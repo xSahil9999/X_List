@@ -1,0 +1,15 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+Disallow: /*.json$
+
+# Google
+User-agent: Googlebot
+Allow: /
+
+# AdSense Crawler
+User-agent: Google-Adsbot-Google
+Allow: /
+
+Sitemap: https://x-list.vercel.app/sitemap.xml
