@@ -13,6 +13,17 @@ export function Topbar() {
       <Link href="/" className="text-sm font-semibold text-textMain lg:hidden">
         X_List
       </Link>
+      <nav className="hidden items-center gap-4 text-sm text-textMuted md:flex">
+        <Link href="/about" className="hover:text-textMain">
+          Über uns
+        </Link>
+        <Link href="/faq" className="hover:text-textMain">
+          FAQ
+        </Link>
+        <Link href="/privacy" className="hover:text-textMain">
+          Datenschutz
+        </Link>
+      </nav>
       <div className="ml-auto flex items-center gap-3">
         {user ? (
           <>

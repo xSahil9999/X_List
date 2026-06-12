@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { Sidebar } from "@/components/layout/sidebar";
 import { MobileNav } from "@/components/layout/mobile-nav";
 import { Topbar } from "@/components/layout/topbar";
@@ -18,6 +19,25 @@ export function AppShell({ children }: { children: React.ReactNode }) {
           <GlobalAuthGate>
             <Topbar />
             {children}
+            <footer className="mt-12 border-t border-borderSoft pt-6 text-sm text-textMuted">
+              <nav className="flex flex-wrap gap-4">
+                <Link href="/about" className="hover:text-textMain">
+                  Über X_List
+                </Link>
+                <Link href="/faq" className="hover:text-textMain">
+                  FAQ
+                </Link>
+                <Link href="/contact" className="hover:text-textMain">
+                  Kontakt
+                </Link>
+                <Link href="/privacy" className="hover:text-textMain">
+                  Datenschutz
+                </Link>
+                <Link href="/imprint" className="hover:text-textMain">
+                  Impressum
+                </Link>
+              </nav>
+            </footer>
           </GlobalAuthGate>
         </main>
       </div>

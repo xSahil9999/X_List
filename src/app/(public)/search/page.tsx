@@ -15,6 +15,15 @@ const sortOptions = [
   { value: "rating", label: "Bewertung" }
 ];
 
+const searchIdeas = [
+  "Frieren",
+  "Dune",
+  "The Last of Us",
+  "One Piece",
+  "Atomic Habits",
+  "Blade Runner"
+];
+
 export default function SearchPage() {
   const [query, setQuery] = useState("");
   const [mediaType, setMediaType] = useState("all");
@@ -57,8 +66,14 @@ export default function SearchPage() {
   }, [debounced, loading, items.length]);
 
   return (
-    <div className="space-y-4">
-      <h1 className="text-2xl font-semibold">Suche</h1>
+    <div className="space-y-6">
+      <div>
+        <h1 className="text-2xl font-semibold">Suche</h1>
+        <p className="mt-2 max-w-3xl text-sm leading-6 text-textMuted">
+          Suche nach Titeln, Reihen, Autoren oder Franchises. X_List vereinheitlicht die Ergebnisse aus mehreren
+          Quellen, damit Anime, Manga, Filme, Serien und Bücher in einer Oberfläche vergleichbar bleiben.
+        </p>
+      </div>
       <div className="grid gap-3 rounded-xl border border-borderSoft bg-panel p-4 md:grid-cols-4">
         <Input placeholder="Titel suchen..." value={query} onChange={(e) => setQuery(e.target.value)} />
         <Select value={mediaType} onChange={(e) => setMediaType(e.target.value)}>
@@ -81,6 +96,28 @@ export default function SearchPage() {
       {error ? <div className="rounded-lg border border-amber-500/30 bg-amber-500/10 p-3 text-sm text-amber-200">{error}</div> : null}
       {emptyHint ? <p className="text-sm text-textMuted">{emptyHint}</p> : null}
       <MediaGrid items={items} />
+
+      {!debounced.trim() ? (
+        <section className="rounded-xl border border-borderSoft bg-panel p-5">
+          <h2 className="font-semibold">Suchideen</h2>
+          <p className="mt-2 text-sm leading-6 text-textMuted">
+            Starte mit einem bekannten Titel oder kombiniere Suche und Medienart. Gute Suchbegriffe sind Originaltitel,
+            deutsche Titel, Autorennamen oder Franchises.
+          </p>
+          <div className="mt-4 flex flex-wrap gap-2">
+            {searchIdeas.map((idea) => (
+              <button
+                key={idea}
+                type="button"
+                className="rounded-full border border-borderSoft bg-panelSoft px-3 py-1 text-sm text-textMuted transition hover:text-textMain"
+                onClick={() => setQuery(idea)}
+              >
+                {idea}
+              </button>
+            ))}
+          </div>
+        </section>
+      ) : null}
     </div>
   );
 }

@@ -10,11 +10,28 @@ export const metadata = {
 const faqs = [
   {
     question: "Was ist X_List?",
-    answer: "X_List ist eine Media-Tracking-Plattform für Anime, Manga, Filme, Serien und Bücher.",
+    answer:
+      "X_List ist eine Media-Tracking-Plattform für Anime, Manga, Filme, Serien und Bücher. Du kannst öffentlich nach Titeln suchen und nach dem Login persönliche Listen verwalten.",
   },
   {
     question: "Ist X_List kostenlos?",
-    answer: "Ja! X_List ist kostenlos. Wir finanzieren uns durch Anzeigen.",
+    answer:
+      "Ja. X_List ist kostenlos nutzbar. Werbung wird nur auf geeigneten Inhaltsseiten geplant und nicht auf Login-, Fehler-, Lade- oder reinen Navigationsseiten eingebunden.",
+  },
+  {
+    question: "Warum brauche ich ein Konto?",
+    answer:
+      "Ein Konto ist nur nötig, wenn du eigene Listen, Fortschritte, Bewertungen, Favoriten oder Notizen speichern möchtest. Suche, Entdecken und öffentliche Informationsseiten funktionieren ohne Login.",
+  },
+  {
+    question: "Woher kommen die Medieninformationen?",
+    answer:
+      "X_List nutzt öffentliche Datenquellen und vereinheitlicht deren Angaben. Auf Detailseiten werden Quelle, Genres, Release-Informationen und externe Bewertungen angezeigt, soweit sie verfügbar sind.",
+  },
+  {
+    question: "Welche Inhalte darf ich speichern?",
+    answer:
+      "Du kannst persönliche Listen für legale Medieninhalte anlegen. X_List hostet keine Filme, Serien, Manga, Animefolgen oder Bücher und ersetzt keine Streaming- oder Kaufplattform.",
   },
 ];
 
@@ -28,6 +45,9 @@ export default function FAQPage() {
           </Button>
         </Link>
         <h1 className="text-4xl font-bold">FAQ</h1>
+        <p className="max-w-2xl text-textMuted">
+          Antworten auf häufige Fragen zur Nutzung, zu Datenquellen und zu persönlichen Listen.
+        </p>
       </div>
 
       <div className="space-y-4">

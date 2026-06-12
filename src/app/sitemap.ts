@@ -1,24 +1,15 @@
-import { MetadataRoute } from 'next'
+import { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const lastModified = new Date();
+  const pages = ["", "/browse", "/search", "/blog", "/about", "/faq", "/contact", "/privacy", "/imprint"];
+
   return [
-    {
-      url: 'https://x-list.vercel.app',
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 1,
-    },
-    {
-      url: 'https://x-list.vercel.app/browse',
-      lastModified: new Date(),
-      changeFrequency: 'daily',
-      priority: 0.8,
-    },
-    {
-      url: 'https://x-list.vercel.app/search',
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-  ]
+    ...pages.map((path) => ({
+      url: `https://x-list.vercel.app${path}`,
+      lastModified,
+      changeFrequency: path === "/browse" ? "daily" as const : "weekly" as const,
+      priority: path === "" ? 1 : path === "/browse" || path === "/search" ? 0.8 : 0.6
+    }))
+  ];
 }

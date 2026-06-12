@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { useParams, useSearchParams } from "next/navigation";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -21,7 +21,7 @@ export default function MediaDetailPage() {
 
   const source = searchParams.get("source") ?? "";
 
-  const load = async () => {
+  const load = useCallback(async () => {
     if (!params?.type || !params?.id) return;
     setLoading(true);
     try {
@@ -39,11 +39,11 @@ export default function MediaDetailPage() {
     } finally {
       setLoading(false);
     }
-  };
+  }, [params?.type, params?.id, source, user?.uid]);
 
   useEffect(() => {
     load();
-  }, [params?.type, params?.id, user, source]);
+  }, [load]);
 
   const genreTags = useMemo(() => media?.genres?.slice(0, 10) ?? [], [media]);
 

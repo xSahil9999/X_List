@@ -1,12 +1,15 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 import "@/app/globals.css";
 import { Providers } from "@/components/layout/providers";
 import { AppShell } from "@/components/layout/app-shell";
 
 export const metadata: Metadata = {
-  title: "X_List",
-  description: "Media Tracking App für Anime, Manga, Filme, Serien und Bücher",
+  title: {
+    default: "X_List - Anime, Manga, Filme, Serien und Bücher organisieren",
+    template: "%s | X_List"
+  },
+  description:
+    "X_List ist ein deutschsprachiger Media-Tracker mit redaktionellen Guides, Entdeckungsseiten und Listenfunktionen für Anime, Manga, Filme, Serien und Bücher.",
   other: {
     "google-adsense-account": "ca-pub-1616427775987604"
   }
@@ -17,11 +20,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="de">
       <head>
         <meta name="google-adsense-account" content="ca-pub-1616427775987604" />
-        <Script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1616427775987604"
-          crossOrigin="anonymous"
-        />
       </head>
       <body>
         <Providers>

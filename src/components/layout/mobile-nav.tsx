@@ -2,12 +2,13 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Compass, LayoutDashboard, ListChecks, Search } from "lucide-react";
+import { BookOpen, Compass, LayoutDashboard, ListChecks, Search } from "lucide-react";
 import { cn } from "@/lib/utils/cn";
 
 const base = [
   { href: "/browse", label: "Browse", icon: Compass },
-  { href: "/search", label: "Suche", icon: Search }
+  { href: "/search", label: "Suche", icon: Search },
+  { href: "/blog", label: "Guides", icon: BookOpen }
 ];
 
 const authed = [
